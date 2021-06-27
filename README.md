@@ -48,7 +48,8 @@ Install the [ARTIC pipeline](https://github.com/artic-network/artic-ncov2019).
 git clone https://github.com/artic-network/artic-ncov2019.git
 ```
 2. Install the ARTIC pipeline  
-```cd artic-ncov2019
+```
+cd artic-ncov2019
 conda env remove -n artic-ncov2019
 conda env create -f environment.yml
 ```
