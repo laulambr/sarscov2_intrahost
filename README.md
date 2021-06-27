@@ -1,7 +1,7 @@
 # sarscov2_intrahost
  SARS-CoV-2 intrahost pipeline
  
- Scripts used to perform analysis of intrahost NGS SARS-CoV-2 NGS data for both Illumina and Nanopore data.
+ Scripts used to perform analysis of (intrahost) SARS-CoV-2 NGS data for both Illumina and Nanopore data.
 
 **Table of contents**
 - [System Requirements](#system-requirements)
@@ -40,6 +40,21 @@ A conda package manager like [Miniconda3](https://docs.conda.io/en/latest/minico
   ```
 
 # Installation
+## Oxford Nanopore 
+Install the [ARTIC pipeline](https://github.com/artic-network/artic-ncov2019). 
+
+1.  Download the initial installation file 
+```
+git clone https://github.com/artic-network/artic-ncov2019.git
+```
+2. Install the ARTIC pipeline  
+```cd artic-ncov2019
+conda env remove -n artic-ncov2019
+conda env create -f environment.yml
+```
+
+
+## Illumina
 Time to install the pipeline took less than 15 minutes on standard desktop computer.
 
 1.  Download the initial environment installation file 
