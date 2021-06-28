@@ -35,7 +35,7 @@ cd $outp/fastq_files
 for bc in {01..09};do mkdir barcode${bc};
 cd barcode${bc};
 
-artic guppyplex --skip-quality-check --min-length 1000 --max-length 1400 --directory $fastq_loc/barcode${bc} --prefix barcode${bc}_pass;
+artic guppyplex --skip-quality-check --min-length 1800 --max-length 2700 --directory $fastq_loc/barcode${bc} --prefix barcode${bc}_pass;
 cd ../
 done
 
@@ -46,7 +46,7 @@ cd $outp/medaka
 
 for bc in {01..09};do mkdir barcode${bc};
 cd barcode${bc};
-artic minion --medaka --normalise 2000 --threads 4 --scheme-directory $prim --read-file $outp/fastq_files/barcode${bc}/barcode${bc}_pass_barcode${bc}.fastq nCoV-2019/Midnight barcode${bc}_medaka;
+artic minion --medaka --normalise 2000 --threads 4 --scheme-directory $prim --read-file $outp/fastq_files/barcode${bc}/barcode${bc}_pass_barcode${bc}.fastq nCoV-2019/Eden barcode${bc}_medaka;
 cd ../
 done
 
@@ -58,7 +58,7 @@ cd $outp/nanopolish
 
 for bc in {01..09};do mkdir barcode${bc};
 cd barcode${bc};
-artic minion --normalise 2000 --threads 4 --scheme-directory $prim --read-file $outp/fastq_files/barcode${bc}/barcode${bc}_pass_barcode${bc}.fastq --sequencing-summary $seq_sum_loc/sequencing_summary.txt --fast5-directory $fast5_loc/fast5_pass/barcode${bc}/ nCoV-2019/Midnight barcode${bc}_nanopolish;
+artic minion --normalise 2000 --threads 4 --scheme-directory $prim --read-file $outp/fastq_files/barcode${bc}/barcode${bc}_pass_barcode${bc}.fastq --sequencing-summary $seq_sum_loc/sequencing_summary.txt --fast5-directory $fast5_loc/fast5_pass/barcode${bc}/ nCoV-2019/Eden barcode${bc}_nanopolish;
 cd ../
 done
 cd ../
@@ -70,8 +70,8 @@ cd ../
 cd $outp/nanopolish
 
 for bc in {01..09};do cd barcode${bc}*;
-samtools mpileup -f $prim/nCoV-2019/Midnight/nCoV-2019.reference.fasta *_nanopolish.primertrimmed.rg.sorted.bam | java -jar $instal_varscan/VarScan.v2.4.3.jar pileup2snp > TSV_all.tsv
-samtools mpileup -f $prim/nCoV-2019/Midnight/nCoV-2019.reference.fasta *_nanopolish.primertrimmed.rg.sorted.bam | java -jar $instal_varscan/VarScan.v2.4.3.jar pileup2snp --min-var-freq 0.8 > TSV_80.tsv
+samtools mpileup -f $prim/nCoV-2019/Eden/nCoV-2019.reference.fasta *_nanopolish.primertrimmed.rg.sorted.bam | java -jar $instal_varscan/VarScan.v2.4.3.jar pileup2snp > TSV_all.tsv
+samtools mpileup -f $prim/nCoV-2019/Eden/nCoV-2019.reference.fasta *_nanopolish.primertrimmed.rg.sorted.bam | java -jar $instal_varscan/VarScan.v2.4.3.jar pileup2snp --min-var-freq 0.8 > TSV_80.tsv
 cd ../
 done
 
@@ -80,7 +80,7 @@ done
 
 
 for bc in {01..09};do cd barcode${bc}*;
-$instal_ngmlr/ngmlr -t 4 -r $prim/nCoV-2019/Midnight/nCoV-2019.reference.fasta -q $outp/fastq_files/barcode${bc}/barcode${bc}_pass_barcode${bc}.fastq -o barcode${bc}.sam -x ont
+$instal_ngmlr/ngmlr -t 4 -r $prim/nCoV-2019/Eden/nCoV-2019.reference.fasta -q $outp/fastq_files/barcode${bc}/barcode${bc}_pass_barcode${bc}.fastq -o barcode${bc}.sam -x ont
 samtools view -S -b barcode${bc}.sam | samtools sort -o barcode${bc}.sorted.bam
 $instal_sniffles/bin/sniffles-core-1.0.12/sniffles --threads 4 --min_support 20 --min_length 10 -m barcode${bc}.sorted.bam -v sniffles_SV_output.vcf
 cd ../
