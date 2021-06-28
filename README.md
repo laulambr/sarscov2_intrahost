@@ -41,7 +41,7 @@ A conda package manager like [Miniconda3](https://docs.conda.io/en/latest/minico
 
 # Installation
 ## Oxford Nanopore 
-Install the [ARTIC pipeline](https://github.com/artic-network/artic-ncov2019). 
+Install the [ARTIC pipeline](https://github.com/artic-network/artic-ncov2019). For more information on the pipeline look at this [website]https://artic.network/ncov-2019/ncov2019-bioinformatics-sop.html .
 
 1.  Download the initial installation file 
 ```
