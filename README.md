@@ -38,6 +38,13 @@ A conda package manager like [Miniconda3](https://docs.conda.io/en/latest/minico
   bash ./Miniconda3-latest-Linux-x86_64.sh
   ```
 
+
+Following tools should also be installed
+
+1. [VarScan.v2.4.3](https://github.com/dkoboldt/varscan)
+2. [ngmlr.v0.2.7](https://github.com/philres/ngmlr)
+3. [Sniffles](https://github.com/fritzsedlazeck/Sniffles)
+
 # Installation of work environments
 ## Oxford Nanopore 
 Install the [ARTIC pipeline](https://github.com/artic-network/artic-ncov2019). For more information on the pipeline look at this [website](https://artic.network/ncov-2019/ncov2019-bioinformatics-sop.html).
@@ -69,12 +76,36 @@ Time to install the Illumina pipeline took less than 15 minutes on standard desk
   ```
    conda activate virus_assembly
   ```
-  
+  ## Github repo
+Install primer schemes
+
+1. Activate environment
+ ```
+   conda activate virus_assembly
+  ```
+
+2. Install git
+  ```
+   git clone  https://github.com/laulambr/sarscov2_intrahost.git
+  ```
   
 # Usage
 ## Oxford Nanopore 
 
-To analyse SARS-CoV-2 data generated with ONT. The following script was used:
+To analyse SARS-CoV-2 data generated with ONT. The following steps can be followed:
+
+1.  Activate work environment
+
+  ```
+  conda activate artic-ncov2019
+  ```
+  
+2. Adapt variables in the script (Based on used primer scheme select *_Midnight or *_Eden)
+
+  ```
+   wrk=/path/to/output/location
+   prj=name_of_output_folder
+  ```
   ```
    bash *.sh
   ```
