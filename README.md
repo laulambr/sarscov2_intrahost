@@ -100,7 +100,7 @@ To analyse SARS-CoV-2 data generated with ONT. The following steps can be follow
   conda activate artic-ncov2019
   ```
   
-2. Adapt variables in the script (Based on used primer scheme select *_Midnight or *_Eden)
+2. Adapt variables in the script (Based on used primer scheme select *_Midnight.sh or *_Eden.sh)
 
   ```
    wrk=/path/to/output/location
