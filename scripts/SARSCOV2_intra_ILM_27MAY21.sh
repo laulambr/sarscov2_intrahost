@@ -1,54 +1,5 @@
 #!/bin/bash
 
-Version=virus_assembly_V1.0
-
-USAGE="
-Pipeline: NGS pipeline for viral assembly.
-usage: $(basename "$0" .sh) [-h -v -p -q] (-i dir -m value -t value )
-(-s string) 
-with:
-    -h  Show help text
-    -v  Version of the pipeline
-    -n  Name of RUN.
-    -i  Input directory
-    -s  Viral species [HIV, RRV, RSV, HMPV]
-    -c  Perform clipping of primers
-    -q  Perform quality check using fastQC
-    -m  Memory
-    -t  Number of threads
-"
-
-### Terminal Arguments ---------------------------------------------------------
-
-# Import user arguments
-while getopts ':hvi:o:s:pqm:t:n:' OPTION; do
-  case $OPTION in
-    h) echo "$USAGE"; exit 1;;
-	v) echo "$Version"; exit 1;;
-    i) IN_DIR=$OPTARG;;
-    s) VIRUS=$OPTARG;;
-    c) CLIP_FLAG=YES;;
-    q) QC_FLAG=YES;;
-    m) MEMORY=$OPTARG;;
-    n) RUN=$OPTARG;;
-    t) THREADS=$OPTARG;;
-    :) printf "missing argument for -$OPTARG\n" >&2; exit 1;;
-    \?) printf "invalid option for -$OPTARG\n" >&2; exit 1;;
-  esac
-done
-
-
-
-
-# Check missing arguments
-MISSING="is missing but required. Exiting."
-if [ -z ${IN_DIR+x} ]; then echo "-i $MISSING"; echo ""; echo "$USAGE"; exit 1; fi;
-if [ -z ${VIRUS+x} ]; then echo "-s $MISSING"; echo ""; echo "$USAGE"; exit 1; fi;
-if [ -z ${RUN+x} ]; then echo "-n is missing. Defaulting to OUTPUT"; echo ""; RUN="OUTPUT"; fi; 
-if [ -z ${MEMORY+x} ]; then echo "-m is missing. Defaulting to ?"; echo ""; MEMORY=2; fi;
-if [ -z ${THREADS+x} ]; then echo "-t is missing. Defaulting to 2 threads."; THREADS=2; fi;
-
-
 ### Define values ---------------------------------------------------------
 
 
