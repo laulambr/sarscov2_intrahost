@@ -103,16 +103,27 @@ To analyse SARS-CoV-2 data generated with ONT. The following steps can be follow
 2. Adapt variables in the script (Based on used primer scheme select *_Midnight.sh or *_Eden.sh)
 
   ```
+  ...
    wrk=/path/to/output/location
    prj=name_of_output_folder
+   ...
   ```
+3. Run the script
+  For Midnight primers:
   ```
-   bash *.sh
+   bash SARSCOV2_intra_ONT_MIDNIGHT.sh
   ```
-
+  For Eden primers:
+  ```
+   bash SARSCOV2_intra_ONT_EDEN.sh
+  ```
 ## Illumina
-To analyse SARS-CoV-2 data generated with Illumina. The following script was used:
-
+To analyse SARS-CoV-2 data generated with Illumina. The following script were followed used:
+1. Activate environment
+ ```
+   conda activate virus_assembly
+  ```
+2. Adapt variables in the script
    ```
    bash *.sh
    ```
