@@ -74,22 +74,17 @@ Time to install the Illumina pipeline took less than 15 minutes on standard desk
   
 # Usage
 ## Oxford Nanopore 
+
+To analyse SARS-CoV-2 data generated with ONT. The following script was used:
+  ```
+   bash *.sh
+  ```
+
 ## Illumina
+To analyse SARS-CoV-2 data generated with Illumina. The following script was used:
 
    ```
- Pipeline: NGS pipeline for viral assembly.
-usage: virus_assembly [-h -v -p -q] (-i dir -m value -t value )
-(-s string) 
-with:
-    -h  Show help text
-    -v  Version of the pipeline
-    -n  Name of RUN.
-    -i  Input directory
-    -s  Viral species [HIV, RSV, RRV, HMPV]
-    -c  Perform clipping of primers
-    -q  Perform quality check using fastQC
-    -m  Memory
-    -t  Number of threads
+   bash *.sh
    ```
 ## Quick start
  1. Activate environment.
