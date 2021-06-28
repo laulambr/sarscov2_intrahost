@@ -7,7 +7,6 @@
 - [System Requirements](#system-requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Example](#quick-start)
 
 # System Requirements
 
@@ -86,13 +85,3 @@ To analyse SARS-CoV-2 data generated with Illumina. The following script was use
    ```
    bash *.sh
    ```
-## Quick start
- 1. Activate environment.
- 
-   ```
-   conda activate virus_assembly
-  ```
- 2. Head to the directory where you will perform the analysis.
- 3. Place the raw fastq.gz files in a directory called source.  
- 4. Create a list holding the sample names from you sequencing files called IDs.list and place it in the main directory.
-
