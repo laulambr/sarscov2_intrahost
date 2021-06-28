@@ -39,9 +39,9 @@ A conda package manager like [Miniconda3](https://docs.conda.io/en/latest/minico
   bash ./Miniconda3-latest-Linux-x86_64.sh
   ```
 
-# Installation
+# Installation of work environments
 ## Oxford Nanopore 
-Install the [ARTIC pipeline](https://github.com/artic-network/artic-ncov2019). For more information on the pipeline look at this [website]https://artic.network/ncov-2019/ncov2019-bioinformatics-sop.html .
+Install the [ARTIC pipeline](https://github.com/artic-network/artic-ncov2019). For more information on the pipeline look at this [website](https://artic.network/ncov-2019/ncov2019-bioinformatics-sop.html).
 
 1.  Download the initial installation file 
 ```
@@ -56,7 +56,7 @@ conda env create -f environment.yml
 
 
 ## Illumina
-Time to install the pipeline took less than 15 minutes on standard desktop computer.
+Time to install the Illumina pipeline took less than 15 minutes on standard desktop computer.
 
 1.  Download the initial environment installation file 
    ```
@@ -70,7 +70,12 @@ Time to install the pipeline took less than 15 minutes on standard desktop compu
   ```
    conda activate virus_assembly
   ```
+  
+  
 # Usage
+## Oxford Nanopore 
+## Illumina
+
    ```
  Pipeline: NGS pipeline for viral assembly.
 usage: virus_assembly [-h -v -p -q] (-i dir -m value -t value )
