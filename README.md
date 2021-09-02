@@ -84,13 +84,15 @@ Install primer schemes
    conda activate virus_assembly
   ```
 
-2. Install git
+2. Clone git repository into current directory
   ```
    git clone  https://github.com/laulambr/sarscov2_intrahost.git
   ```
+3. The primer schemes can be found within the cloned directory sarscov2_intrahost/primer_schemes
   
-# Data availibility
+# Data availability
 Raw data can be downloaded from the Sequencing Read Archive under the following Bioproject PRJNA724859.
+The [ARTIC pipeline](https://github.com/artic-network/artic-ncov2019) has included stimulated reads data on which can be used to proof run the scripts.
   
 # Usage
 ## Oxford Nanopore 
@@ -109,9 +111,25 @@ To analyse SARS-CoV-2 data generated with ONT. The following steps can be follow
   ...
    wrk=/path/to/output/location
    prj=name_of_output_folder
+# location of demultiplexed fastq ONT data
+	fastq_loc=/path/to/fastq
+# location of fast5 ONT data
+	fast5_loc=/path/to/fast5
+# location of sequencing sumary ONT data
+	seq_sum_loc=/path/to/summary
+ 
+# location of primer schemes (installed via cloning of the sarscov2_intrahost repository)
+	prim=path/to/primer_schemes
+ 
+# install location of varscan
+	instal_varscan=/path/to/varscan/
+# install location of ngmlr
+	instal_ngmlr=/path/to/ngmlr-0.2.7/
+# install location of sniffles
+	instal_sniffles=/path/to/Sniffles-maste
    ...
   ```
-3. Run the script
+3. Run the script with adapted variables
   For Midnight primers:
   ```
    bash SARSCOV2_intra_ONT_MIDNIGHT.sh
