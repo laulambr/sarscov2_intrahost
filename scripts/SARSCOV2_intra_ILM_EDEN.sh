@@ -5,9 +5,9 @@
 
 
 #define project folder
-IN_DIR=/data/thesisguest1/work/JVC_ILM_PC20/
+IN_DIR=/path/to/data/
 #set database folder
-db=$IN_DIR/db
+db=path/to/db
 
 #set virus for filtering
 blast="$VIRUS"_refs
