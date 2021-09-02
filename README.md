@@ -105,7 +105,7 @@ To analyse SARS-CoV-2 data generated with ONT. The following steps can be follow
   conda activate artic-ncov2019
   ```
   
-2. Adapt variables in the script (Based on used primer scheme select *_Midnight.sh or *_Eden.sh)
+2. Adapt variables in the script (Based on used amplicon primer scheme select *_MIDNIGHT.sh or *_EDEN.sh)
 
   ```
   ...
@@ -126,7 +126,7 @@ To analyse SARS-CoV-2 data generated with ONT. The following steps can be follow
 # install location of ngmlr
 	instal_ngmlr=/path/to/ngmlr-0.2.7/
 # install location of sniffles
-	instal_sniffles=/path/to/Sniffles-maste
+	instal_sniffles=/path/to/Sniffles
    ...
   ```
 3. Run the script with adapted variables
@@ -139,12 +139,28 @@ To analyse SARS-CoV-2 data generated with ONT. The following steps can be follow
    bash SARSCOV2_intra_ONT_EDEN.sh
   ```
 ## Illumina
-To analyse SARS-CoV-2 data generated with Illumina. The following script were followed used:
+To analyse SARS-CoV-2 data generated with Illumina. The following steps were followed:
 1. Activate environment
  ```
    conda activate virus_assembly
   ```
-2. Adapt variables in the script
-   ```
-   bash *.sh
-   ```
+2. Head to the directory where you will perform the analysis.
+3. Place the raw fastq.gz files in a directory called source.
+4. Create a list holding the sample names from all your sequencing files called IDs.list and place it in the main directory. 
+5. Adapt variables in the script  (Based on used amplicon primer scheme select *_MIDNIGHT.sh or *_EDEN.sh)
+```
+#define project folder
+IN_DIR=/path/to/data/
+#set path to database folder (installed via cloning of the sarscov2_intrahost repository) 
+db=path/to/db
+``` 
+  
+6. Run the script with adapted variables
+  For Midnight primers:
+  ```
+   bash SARSCOV2_intra_ILM_MIDNIGHT.sh
+  ```
+  For Eden primers:
+  ```
+   bash SARSCOV2_intra_ILM_EDEN.sh
+  ```
