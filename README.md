@@ -6,6 +6,7 @@
 **Table of contents**
 - [System Requirements](#system-requirements)
 - [Installation](#installation)
+- [Data availability](#data-availability)
 - [Usage](#usage)
 
 # System Requirements
