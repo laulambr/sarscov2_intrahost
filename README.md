@@ -89,7 +89,7 @@ Install primer schemes
    git clone  https://github.com/laulambr/sarscov2_intrahost.git
   ```
   
-#Data availibility
+# Data availibility
 Raw data can be downloaded from the Sequencing Read Archive under the following Bioproject PRJNA724859.
   
 # Usage
